@@ -1,0 +1,42 @@
+@import 'variables';
+
+guard-panel {
+  position: relative;
+  z-index: z-index(modal) + 10;
+}
+
+.guard-panel {
+  background-color: #266eb3;
+  box-shadow: $box-shadow;
+  padding: 47px 40px 40px;
+  position: fixed;
+  width: 400px;
+  max-width: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: z-index(modal) + 20;
+
+  .link-btn, h4, p {
+    color: white;
+  }
+
+  .guard-panel-large & {
+    width: calc(100% - 400px);
+  }
+}
+
+.guard-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(#000, 0.4);
+  opacity: 0.01;
+  will-change: opacity;
+
+  .hide-backdrop & {
+    display: none !important
+  }
+}

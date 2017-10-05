@@ -1,0 +1,15 @@
+<div class="guard-modal-backdrop" *ngIf="guardPanel" [@guardBackdropState]="mode"></div>
+<div class="guard-panel" [@guardState]="mode">
+  <h4>
+    {{guardPanel?.header}}
+  </h4>
+  <p>
+    {{guardPanel?.text}}
+  </p>
+  <button type="button" class="btn" dangerous (click)="confirmClicked()">
+    {{guardPanel?.proceedButtonText}}
+  </button>
+  <button type="button" class="link-btn" [hidden]="!cancel" margin-left (click)="cancelClicked()">
+    {{e13n?.cancelButtonText}}
+  </button>
+</div>
